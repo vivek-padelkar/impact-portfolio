@@ -52,13 +52,13 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden glass mt-3 mx-6 rounded-xl p-4 flex flex-col gap-3">
+        <div className="md:hidden mt-3 mx-6 rounded-xl p-4 flex flex-col gap-3 bg-card border border-border shadow-elegant backdrop-blur-xl">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-sm text-muted-foreground hover:text-foreground"
+              className="text-sm text-foreground/90 hover:text-primary transition-colors py-1"
             >
               {l.label}
             </a>
