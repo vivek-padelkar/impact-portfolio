@@ -6,15 +6,46 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden"
     >
       <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
       <div className="absolute inset-0 [background-image:radial-gradient(oklch(1_0_0/0.05)_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left: Text */}
-          <div className="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Photo — first on mobile, right on desktop */}
+          <div className="lg:col-span-5 lg:order-2 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="relative"
+            >
+              {/* Glow */}
+              <div className="absolute -inset-6 bg-gradient-primary rounded-full blur-3xl opacity-30" />
+              {/* Ring */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-primary via-accent-2 to-primary opacity-60 blur-sm" />
+              {/* Photo frame */}
+              <div className="relative w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/40 shadow-glow bg-gradient-to-br from-primary/10 to-accent-2/10">
+                <img
+                  src={vivekPhoto}
+                  alt="Vivek Padelkar — Senior Node.js Engineer"
+                  className="w-full h-full object-cover object-center scale-110"
+                  loading="eager"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 glass rounded-full px-4 py-1.5 text-xs font-medium whitespace-nowrap">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-primary shadow-glow animate-pulse" />
+                  Open to work
+                </span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Text — second on mobile, left on desktop */}
+          <div className="lg:col-span-7 lg:order-1 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -22,7 +53,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-muted-foreground mb-6"
             >
               <span className="h-2 w-2 rounded-full bg-primary shadow-glow" />
-              Available for Senior / Lead Engineering roles
+              Senior / Lead Engineering — 10+ years
             </motion.div>
 
             <motion.h1
@@ -43,9 +74,9 @@ export function Hero() {
             >
               I'm{" "}
               <span className="text-foreground font-medium">Vivek Padelkar</span> — a
-              Senior Node.js Engineer with 10+ years architecting high-traffic
-              microservices, leading teams, and turning complex business logic
-              into resilient, observable platforms.
+              Senior Node.js Engineer architecting high-traffic microservices,
+              leading teams, and turning complex business logic into resilient,
+              observable platforms.
             </motion.p>
 
             <motion.div
@@ -103,26 +134,6 @@ export function Hero() {
               </span>
             </motion.div>
           </div>
-
-          {/* Right: Photo */}
-          <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="absolute -inset-8 bg-gradient-primary rounded-full blur-3xl opacity-25" />
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-primary/30 shadow-glow bg-gradient-to-br from-primary/10 to-accent-2/10">
-                <img
-                  src={vivekPhoto}
-                  alt="Vivek Padelkar — Senior Node.js Engineer"
-                  className="w-full h-full object-cover object-top"
-                  loading="eager"
-                />
-              </div>
-            </motion.div>
-          </div>
         </div>
 
         {/* Stats */}
@@ -130,7 +141,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
         >
           {[
             { k: "10+", v: "Years experience" },
