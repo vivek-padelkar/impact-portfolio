@@ -26,7 +26,7 @@ export function Contact() {
       description="Open to senior backend / full-stack / tech lead roles and consulting. I'll reply within a day."
     >
       <div className="grid md:grid-cols-5 gap-6">
-        <div className="md:col-span-2 space-y-4">
+        <div className="md:col-span-2 flex flex-col gap-4">
           {[
             { icon: Mail, label: "Email", value: "vivek.padelkar@gmail.com", href: "mailto:vivek.padelkar@gmail.com" },
             { icon: Phone, label: "Phone", value: "+91 7666918811", href: "tel:+917666918811" },
