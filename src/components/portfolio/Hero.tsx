@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import vivekPhoto from "@/assets/vivek-photo.png";
+import c1 from "@/assets/c2.png"
 
 export function Hero() {
   return (
@@ -28,9 +29,9 @@ export function Hero() {
               {/* Photo frame */}
               <div className="relative w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/40 shadow-glow bg-gradient-to-br from-primary/10 to-accent-2/10">
                 <img
-                  src={vivekPhoto}
+                  src={c1}
                   alt="Vivek Padelkar — Senior Node.js Engineer"
-                  className="w-full h-full object-cover object-center scale-110"
+                  className="w-full"
                   loading="eager"
                 />
               </div>
@@ -123,7 +124,7 @@ export function Hero() {
                 <Mail className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/vivek-padelkar"
                 aria-label="GitHub"
                 className="hover:text-foreground transition"
               >

@@ -21,9 +21,8 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        scrolled ? "py-3 glass" : "py-5 bg-transparent"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3 glass" : "py-5 bg-transparent"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a href="#top" className="font-bold tracking-tight text-lg">
